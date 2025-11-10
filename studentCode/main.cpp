@@ -2,16 +2,19 @@
 #include "ServiceRecord.h"
 #include <iostream>
 
-void findInInventory(std::vector<Car>::iterator it, std::vector<Car> inventory, int id){
+// Changed the iterator and inventory to memory addresses to pass by reference instead of value
+// Also changed parameters to be model and year instead of ID. This is because the car in inventory is a copy, causing the IDs to be mismatched.
+void findInInventory(std::vector<Car>::iterator& it, std::vector<Car>& inventory, std::string model, int year){
 	while(it != inventory.end()){
-		if(it->getId() == id){
+		if(it->getModel() == model && it->getYear() == year){
 			break;
 		}
 		++it;
 	}
 }
 
-void makeTrade(std::vector<Car> inventory, Car tradein, Car tradeout){
+// Changed these all to memory addresses so we can pass by reference instead of value
+void makeTrade(std::vector<Car>& inventory, Car& tradein, Car& tradeout){
 	ServiceRecord outInspection("Sale inspection.", 0.0);
 	tradeout.addRecord(outInspection);
 
@@ -19,7 +22,8 @@ void makeTrade(std::vector<Car> inventory, Car tradein, Car tradeout){
 	tradein.addRecord(inInspection);
 
 	auto it=inventory.begin();
-	findInInventory(it, inventory, tradeout.getId());
+	// Changed this to find by model and year instead of id
+	findInInventory(it, inventory, tradeout.getModel(), tradeout.getYear());
 	if(it != inventory.end()){
 		inventory.erase(it);
 	}

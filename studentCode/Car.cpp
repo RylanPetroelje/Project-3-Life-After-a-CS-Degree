@@ -3,10 +3,19 @@
 
 int Car::current_id = 0;
 
+// Standard constructor
 Car::Car(int year, std::string model){
 	this->id = Car::current_id++;
 	this->year = year;
 	this->model = model;
+}
+
+// Constructor for copying off another car
+Car::Car(const Car &other) {
+	this->id = Car::current_id++;
+	this->year = other.year;
+	this->model = other.model;
+	this->records = other.records;
 }
 
 int Car::getId() const {

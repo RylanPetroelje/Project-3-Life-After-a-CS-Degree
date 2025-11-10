@@ -8,6 +8,7 @@
 class Car {
 	public:
 		Car(int, std::string);
+		Car(const Car&); // Added constructor for copies
 		int getId() const;
 		void setYear(int);
 		int getYear() const;
