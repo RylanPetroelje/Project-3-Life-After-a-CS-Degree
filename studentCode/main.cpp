@@ -55,4 +55,8 @@ int main(int argc, char** argv){
 	for(auto it = inventory.begin(); it != inventory.end(); ++it){
 		std::cout << *it << std::endl;
 	}
+
+	std::cout << "a < b = " << a < b << std::endl;
+
+	return 0;
 }
