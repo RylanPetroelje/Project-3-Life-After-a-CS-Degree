@@ -20,3 +20,4 @@ This fix was fairly easy as he esentially just told us to change the function to
 
 ## Problem 4:
 
+This part was very simple other than figuring out the syntax for C++ to accept the `operator<()` function. Though once the syntax was fixed, the logic for the comparison and the implemention was very straight-forward to create.
