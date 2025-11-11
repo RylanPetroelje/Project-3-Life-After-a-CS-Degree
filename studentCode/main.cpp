@@ -1,6 +1,8 @@
 #include "Car.h"
 #include "ServiceRecord.h"
 #include <iostream>
+#include <algorithm>
+using namespace std;
 
 // Changed the iterator and inventory to memory addresses to pass by reference instead of value
 // Also changed parameters to be model and year instead of ID. This is because the car in inventory is a copy, causing the IDs to be mismatched.

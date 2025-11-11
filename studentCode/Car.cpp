@@ -55,7 +55,7 @@ std::ostream& operator<<(std::ostream& os, const Car& car){
 	return os;
 }
 
-bool operator<(const Car& other) const {
+bool Car::operator<(const Car& other) const {
     float totalCostThis = 0.0f;
 	for (const auto& record : this->records) {
 		totalCostThis += record.getCost();

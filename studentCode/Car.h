@@ -17,7 +17,7 @@ class Car {
 		std::vector<ServiceRecord> getRecords() const;
 		void addRecord(ServiceRecord);
 
-		bool operator<(const Car& other) const
+		bool operator<(const Car& other) const;
 		friend std::ostream& operator<<(std::ostream& of, const Car& car);
 	private:
 		static int current_id;
