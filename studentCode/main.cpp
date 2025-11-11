@@ -56,7 +56,33 @@ int main(int argc, char** argv){
 		std::cout << *it << std::endl;
 	}
 
-	std::cout << "a < b = " << a < b << std::endl;
+	Car A1(1985, "Toyota Hilux");
+	A1.addRecord(ServiceRecord("Oil change", 9.95f));
+
+	Car B1(2010, "Honda Civic");
+	B1.addRecord(ServiceRecord("Brake replacement", 150.00f));
+	B1.addRecord(ServiceRecord("Tire rotation", 25.00f));
+
+	Car C1(2018, "Ford F150");
+	C1.addRecord(ServiceRecord("Battery replacement", 120.00f));
+
+	Car D1(2005, "Chevy Silverado");
+	D1.addRecord(ServiceRecord("Transmission repair", 800.00f));
+
+	Car E1(2020, "Tesla Model 3");
+	E1.addRecord(ServiceRecord("Software update", 5.00f));
+
+	std::vector<Car> cars = { A1, B1, C1, D1, E1 };
+
+	std::cout << "=== Before sorting ===" << std::endl;
+	for (const auto& car : cars)
+		std::cout << car << std::endl;
+
+	std::sort(cars.begin(), cars.end());
+
+	std::cout << "=== After sorting (by total service cost) ===" << std::endl;
+	for (const auto& car : cars)
+		std::cout << car << std::endl;
 
 	return 0;
 }
