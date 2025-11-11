@@ -16,7 +16,7 @@ This structure doesn't adhere to the implemented constructor, which takes in an 
 I actually never saw this issue. After doing most of problem 1, my ID's weren't adding up in `main()` so part of my fix was making the inventory and iterators pass-by-reference instead of pass-by-value in the trading functions. They still weren't adding up so I did what I assume problem 3 is asking
 
 ## Problem 3:
-
+This fix was fairly easy as he esentially just told us to change the function to a pass-by-refernce, so I adjusted the function `makeTrade()` so that it's all memory addresses instead of passing the object itself.
 
 ## Problem 4:
 
