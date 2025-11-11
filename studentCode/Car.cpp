@@ -46,7 +46,11 @@ void Car::addRecord(ServiceRecord record){
 	records.push_back(record);
 }
 
-bool operator<(const Car& other) {
-	return this->records < other.records;
+std::ostream& operator<<(std::ostream& os, const Car& car){
+	os << car.id << ":" << car.year << " " << car.model << std::endl;
+	os << "=========================" << std::endl;
+	for(auto it=car.records.begin(); it != car.records.end(); ++it){
+		os << "\t" << it->getCost() << ": " << it->getNotes() << std::endl;
+	}
+	return os;
 }
-
